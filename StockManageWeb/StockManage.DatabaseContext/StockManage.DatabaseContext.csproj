@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E4C55CC2-FF71-4243-8CB1-0E2D44A97EEC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StockManage.DatabaseContext</RootNamespace>
+    <AssemblyName>StockManage.DatabaseContext</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0-preview7-19363-02\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0-preview7-19363-02\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DatabaseContext\StockManageDbContext.cs" />
+    <Compile Include="Migrations\201907271731437_InitialCreate.cs" />
+    <Compile Include="Migrations\201907271731437_InitialCreate.Designer.cs">
+      <DependentUpon>201907271731437_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907281832081_first001.cs" />
+    <Compile Include="Migrations\201907281832081_first001.Designer.cs">
+      <DependentUpon>201907281832081_first001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907281847337_first004.cs" />
+    <Compile Include="Migrations\201907281847337_first004.Designer.cs">
+      <DependentUpon>201907281847337_first004.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907281917356_first006.cs" />
+    <Compile Include="Migrations\201907281917356_first006.Designer.cs">
+      <DependentUpon>201907281917356_first006.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907291510470_PRoduct.cs" />
+    <Compile Include="Migrations\201907291510470_PRoduct.Designer.cs">
+      <DependentUpon>201907291510470_PRoduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907291540416_PRoduct1.cs" />
+    <Compile Include="Migrations\201907291540416_PRoduct1.Designer.cs">
+      <DependentUpon>201907291540416_PRoduct1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907291919263_Customer.cs" />
+    <Compile Include="Migrations\201907291919263_Customer.Designer.cs">
+      <DependentUpon>201907291919263_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907300019213_Supplies.cs" />
+    <Compile Include="Migrations\201907300019213_Supplies.Designer.cs">
+      <DependentUpon>201907300019213_Supplies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907311452068_image.cs" />
+    <Compile Include="Migrations\201907311452068_image.Designer.cs">
+      <DependentUpon>201907311452068_image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907311454263_images.cs" />
+    <Compile Include="Migrations\201907311454263_images.Designer.cs">
+      <DependentUpon>201907311454263_images.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908051910564_asssssssssss.cs" />
+    <Compile Include="Migrations\201908051910564_asssssssssss.Designer.cs">
+      <DependentUpon>201908051910564_asssssssssss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908071631439_sales.cs" />
+    <Compile Include="Migrations\201908071631439_sales.Designer.cs">
+      <DependentUpon>201908071631439_sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908071707005_sale.cs" />
+    <Compile Include="Migrations\201908071707005_sale.Designer.cs">
+      <DependentUpon>201908071707005_sale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908071714006_sal.cs" />
+    <Compile Include="Migrations\201908071714006_sal.Designer.cs">
+      <DependentUpon>201908071714006_sal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908080349463_aaaaaaaaaaaaaaaaaaa.cs" />
+    <Compile Include="Migrations\201908080349463_aaaaaaaaaaaaaaaaaaa.Designer.cs">
+      <DependentUpon>201908080349463_aaaaaaaaaaaaaaaaaaa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StockManage.Models\StockManage.Models.csproj">
+      <Project>{8810158B-C893-419F-8A7C-80967385889B}</Project>
+      <Name>StockManage.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201907271731437_InitialCreate.resx">
+      <DependentUpon>201907271731437_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907281832081_first001.resx">
+      <DependentUpon>201907281832081_first001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907281847337_first004.resx">
+      <DependentUpon>201907281847337_first004.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907281917356_first006.resx">
+      <DependentUpon>201907281917356_first006.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907291510470_PRoduct.resx">
+      <DependentUpon>201907291510470_PRoduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907291540416_PRoduct1.resx">
+      <DependentUpon>201907291540416_PRoduct1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907291919263_Customer.resx">
+      <DependentUpon>201907291919263_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907300019213_Supplies.resx">
+      <DependentUpon>201907300019213_Supplies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907311452068_image.resx">
+      <DependentUpon>201907311452068_image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907311454263_images.resx">
+      <DependentUpon>201907311454263_images.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908051910564_asssssssssss.resx">
+      <DependentUpon>201908051910564_asssssssssss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908071631439_sales.resx">
+      <DependentUpon>201908071631439_sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908071707005_sale.resx">
+      <DependentUpon>201908071707005_sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908071714006_sal.resx">
+      <DependentUpon>201908071714006_sal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908080349463_aaaaaaaaaaaaaaaaaaa.resx">
+      <DependentUpon>201908080349463_aaaaaaaaaaaaaaaaaaa.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\EntityFramework.6.3.0-preview7-19363-02\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0-preview7-19363-02\build\EntityFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0-preview7-19363-02\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0-preview7-19363-02\build\EntityFramework.targets'))" />
+  </Target>
+</Project>

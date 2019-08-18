@@ -1,0 +1,102 @@
+﻿@model StockManage.Models.Models.Supplier
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2 class="alert alert-info text-center">Add</h2>
+@if (ViewBag.message != null)
+{
+    <div class="alert alert-info">@ViewBag.message</div>
+
+}
+<div class="row" style="margin-left:20%">
+
+    <form method="post">
+        <table>
+
+            <tr>
+                <td><h4 class="text-primary">Category Name</h4></td>
+                <td><input type="text" name="Name" /></td>
+
+            </tr>
+
+            <tr>
+                <td><h4 class="text-primary">Category Code</h4></td>
+                <td><input class="text-primary" type="text" name="Code" /></td>
+
+            </tr>
+
+            <tr>
+                <td><h4 class="text-primary">Customer Address</h4></td>
+                <td><input class="text-primary" type="text" name="Address" /></td>
+
+            </tr>
+
+            <tr>
+                <td><h4 class="text-primary">Customer Email</h4></td>
+                <td><input class="text-primary" type="text" name="Email" /></td>
+
+            </tr>
+
+            <tr>
+                <td><h4 class="text-primary">Customer Contact</h4></td>
+                <td><input class="text-primary" type="text" name="Contact" /></td>
+
+            </tr>
+
+            <tr>
+                <td><h4 class="text-primary">Contact Person</h4></td>
+                <td><input class="text-primary" type="text" name="ContactPerson" /></td>
+
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input class="btn btn-success" type="submit" value="Add" /></td>
+
+            </tr>
+
+        </table>
+
+    </form>
+
+    <div class="col-lg-10">
+
+        <table class="table table-striped row">
+            <thead>
+                <tr>
+                    <th>Sl</th>
+                    <th>Category Name</th>
+                    <th>Category Code</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>ContactPerson</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{int sl = 1; }
+                @foreach (var i in Model.suppliers)
+                {
+                    <tr>
+                        <td>@( sl++ )</td>
+                        <td>@i.Name</td>
+                        <td>@i.Code</td>
+                        <td>@i.Address</td>
+                        <td>@i.Email</td>
+                        <td>@i.Contact</td>
+                        <td>@i.ContactPerson</td>
+                        <td><a href="/Supplier/Edit?id=@i.ID" class="btn btn-primary" name="Name">Edit</a></td>
+                        <td><a href="/Supplier/Delete?id=@i.ID" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,71 @@
+﻿
+@model StockManage.Models.Models.Product
+@{
+    /**/
+
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@if (Model != null)
+{
+    <div class="alert alert-info">@ViewBag.message</div>
+    <div class="row" style="margin-left:300px">
+
+        <form method="post">
+            <table>
+
+                <tr>
+                    <td><h4 class="text-primary">Product Name</h4></td>
+                    <td><input type="text" name="Name" value="@Model.Name" /></td>
+
+                </tr>
+
+                <tr>
+                    <td><h4 class="text-primary">Product Code</h4></td>
+                    <td><input class="text-primary" type="text" name="Code" value="@Model.Code" /></td>
+
+                </tr>
+
+
+                <tr>
+                    <td><h4 class="text-primary">ProductCategory</h4></td>
+                    <td>
+                        <select class="dropdown" name="Category">
+
+                            <option>@Model.Category</option>
+
+                        </select>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+                    <td><h4 class="text-primary">Product Reorder Level</h4></td>
+                    <td><input class="text-primary" type="text" name="ReorderLevel" value="@Model.ReorderLevel" /></td>
+
+                </tr>
+
+                <tr>
+                    <td><h4 class="text-primary">Product Discription</h4></td>
+                    <td><input class="text-primary" type="text" name="Discription" value="@Model.Discription" /></td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input class="btn btn-success" type="submit" value="Update" /></td>
+
+                </tr>
+
+            </table>
+
+        </form>
+
+
+
+    </div>
+
+
+}
