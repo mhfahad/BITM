@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using StockManage.DatabaseContext.DatabaseContext;
 using StockManage.Models.Models;
 using System.Data.Entity;
+using System.IO;
+using System.Web;
 
 namespace StockManageWeb.repository.Repository
 {
@@ -13,8 +15,16 @@ namespace StockManageWeb.repository.Repository
     {
         StockManageDbContext Db = new StockManageDbContext();
 
-        public int add(Product product)
+        public int add(Product product, HttpPostedFileBase image)
         {
+
+
+            using (BinaryReader br = new BinaryReader(image.InputStream))
+            {
+
+                product.Data = br.ReadBytes(image.ContentLength);
+            }
+
             Db.products.Add(product);
             int saved = Db.SaveChanges();
             return 0;
@@ -26,15 +36,22 @@ namespace StockManageWeb.repository.Repository
 
         }
 
-        public int Edit(Product product)
+        public int Edit(Product product, HttpPostedFileBase image)
         {
+            
             Product aProduct = Db.products.FirstOrDefault(x => x.ID == product.ID);
             aProduct.Name = product.Name;
             aProduct.Code = product.Code;
-            aProduct.Category = product.Category;
+            aProduct.CategoryID = product.CategoryID;
             aProduct.Discription = product.Discription;
             aProduct.ReorderLevel = product.ReorderLevel;
 
+            using (BinaryReader br = new BinaryReader(image.InputStream))
+            {
+
+                product.Data = br.ReadBytes(image.ContentLength);
+            }
+            aProduct.Data = product.Data;
             Db.SaveChanges();
             return 0;
         }
@@ -51,6 +68,11 @@ namespace StockManageWeb.repository.Repository
         {
             Product aProduct = Db.products.FirstOrDefault(c => c.ID == product.ID);
             return aProduct;
+        }
+
+        public List<Product> search(Product product)
+        {
+            return Db.products.Where(c => c.Name.ToLower().Contains(product.Name.ToLower())).ToList();
         }
     }
 }

@@ -1,4 +1,4 @@
-namespace StockManage.DatabaseContext.Migrations
+﻿namespace StockManage.DatabaseContext.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -10,7 +10,6 @@ namespace StockManage.DatabaseContext.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "StockManage.DatabaseContext.DatabaseContext.StockManageDbContext";
         }
 
         protected override void Seed(StockManage.DatabaseContext.DatabaseContext.StockManageDbContext context)

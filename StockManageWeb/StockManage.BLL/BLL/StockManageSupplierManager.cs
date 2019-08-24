@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace StockManage.BLL.BLL
 {
@@ -12,9 +13,9 @@ namespace StockManage.BLL.BLL
     {
         Supplier supplier= new Supplier();
         StockManageSupplierRipository _Repository = new StockManageSupplierRipository();
-        public void Add(Supplier supplier)
+        public void Add(Supplier supplier, HttpPostedFileBase image)
         {
-            _Repository.add(supplier);
+            _Repository.add(supplier,image);
         }
         public List<Supplier> Show()
         {

@@ -21,7 +21,7 @@ namespace StockManage.BLL.BLL
             return _Repository.Show();
         }
 
-        public List<Product> ShowProduct()
+        public List<Purchase> ShowProduct()
         {
             return _Repository.ShowProduct();
         }
@@ -29,6 +29,11 @@ namespace StockManage.BLL.BLL
         public int GetByID(int customerID)
         {
             return _Repository.GetByID(customerID);
+        }
+
+        public int GetbyIDReorder(int productID)
+        {
+            return _Repository.GetByID(productID);
         }
         public int GetByID2(int productID)
         {

@@ -19,23 +19,20 @@ namespace StockManage.Models.Models
         [Required(ErrorMessage = "Not null")]
         [StringLength(50, MinimumLength = 3)]
         public string Code { get; set; }
-
-        [Required(ErrorMessage = "Not null")]
-        [StringLength(50, MinimumLength = 3)]
-        public string Category { get; set; }
-
+        
         [Required]
         public int ReorderLevel { get; set; }
 
         [Required(ErrorMessage = "Not null")]
         [StringLength(50, MinimumLength = 3)]
         public string Discription { get; set; }
+        [Required]
+        public byte[] Data { get; set; }
 
+        [Required]
+        public int CategoryID { get; set; }
+        public virtual Category categories { get; set; }
 
-        [NotMapped]
-        public List<Category> categories { get; set; }
-
-        [NotMapped]
-        public List<Product> products { get; set; }
+        public virtual List<Product> Products { get; set; }
     }
 }

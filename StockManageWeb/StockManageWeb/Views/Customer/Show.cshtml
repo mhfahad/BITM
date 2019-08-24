@@ -1,5 +1,5 @@
 ﻿
-@model StockManage.Models.Models.Customer
+@model StockManageWeb.Models.CustomerVM
 @{
     ViewBag.Title = "Show";
 }
@@ -8,18 +8,21 @@
 
 <div class="row" style="margin-left:0">
     <form method="post">
+        <table>
+            <tr>
+                <td><h4 class="text-primary">Search</h4></td>
+                <td><input class="text-primary" type="text" name="Name" /></td>
 
-        <tr>
-            <td><h4 class="text-primary">Search</h4></td>
-            <td><input class="text-primary" type="text" name="Name" /></td>
+            </tr>
 
-        </tr>
+            <tr>
+                <td></td>
+                <td><input class=" btn btn-primary" type="submit" value="Search" /></td>
 
-        <tr>
-            <td></td>
-            <td><input class=" btn btn-primary" type="submit" value="Search" /></td>
+            </tr>
 
-        </tr>
+        </table>
+        
     </form>
 
 

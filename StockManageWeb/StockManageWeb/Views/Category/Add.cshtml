@@ -2,71 +2,71 @@
 @{
     /**/
 
-    ViewBag.Title = "Add";
+    ViewBag.Title = "Add Category";
 }
 
 <h2 class="alert alert-info text-center">Add</h2>
 @if (ViewBag.message != null)
 {
-    <div class="alert alert-info">@ViewBag.message</div>
+    <div class="@ViewBag.color">@ViewBag.message</div>
 
 }
-<div class="row" style="align-content:center">
-    <div style="align-content:center">
-
-        <form method="post">
-            <table>
-
-                <tr>
-                    <td><h6 class="text">Category Name</h6></td>
-                    <td><input class="form-control" type="text" name="Name" /></td>
-
-                </tr>
-
-                <tr>
-                    <td><h6 class="text">Category Code</h6></td>
-                    <td><input class="form-control" type="text" name="Code" /></td>
-
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td><input class="btn btn-success" type="submit" value="Add" /></td>
-
-                </tr>
-
-            </table>
-
-        </form>
-    </div>
+<form method="post">
 
 
-    <div>
-        <table class="table table-striped" style="align-content:center">
-            <thead>
-                <tr>
-                    <th>Sl</th>
-                    <th>Category Name</th>
-                    <th>Category Code</th>
-                </tr>
-            </thead>
-            <tbody>
 
-                @{int sl = 1; }
-                @foreach (var i in Model.categories)
-                {
-                    <tr>
-                        <td>@( sl++ )</td>
-                        <td>@i.Name</td>
-                        <td>@i.Code</td>
-                        <td><a href="/Category/Edit?id=@i.ID" class="btn btn-primary" name="Name">Edit</a></td>
-                        <td><a href="/Category/Delete?id=@i.ID" class="btn btn-danger">Delete</a></td>
-                    </tr>
-                }
+    <div class="row">
+        <div class="col-3">
+
+        </div>
+        <div class="col-6 center">
+            <h6 class="text-bold">Category Name</h6>
+            <input class="form-control" type="text" name="Name" value="@Model.Name" />
 
 
-            </tbody>
-        </table>
+
+            <h6 class="text-bold">Category Code</h6>
+            <input class="form-control" type="text" name="Code" value="@Model.Code" />
+
+
+
+
+            <input class="btn btn-success" type="submit" value="Add" />
+        </div>
+        <div class="col-3">
+
+        </div>
 
     </div>
+
+</form>
+
+
+
+<table class="table table-striped col-12" style="align-content:center">
+    <thead>
+        <tr>
+            <th>Sl</th>
+            <th>Category Name</th>
+            <th>Category Code</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @{int sl = 1; }
+        @foreach (var i in Model.categories)
+        {
+            <tr>
+                <td>@( sl++ )</td>
+                <td>@i.Name</td>
+                <td>@i.Code</td>
+                <td><a href="/Category/Edit?id=@i.ID" class="btn btn-primary" name="Name">Edit</a></td>
+                <td><a href="/Category/Delete?id=@i.ID" class="btn btn-danger">Delete</a></td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
 </div>

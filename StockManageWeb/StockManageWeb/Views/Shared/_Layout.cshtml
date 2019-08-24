@@ -165,7 +165,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview menu-open">
 
                             <ul class="nav nav-treeview">
@@ -281,6 +281,31 @@
                                     <a href="~/Supplier/Add" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Customer Services
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="~/Purchase/add" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Purchase</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="~/Sale/Add" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Sales</p>
                                     </a>
                                 </li>
 
@@ -485,8 +510,8 @@
             <!-- /.sidebar -->
         </aside>
 
-        <div class="container body-content">
-            <div class="content-wrapper">
+        <div class="" style="margin:5%,5%,5%,5%">
+            <div class="content-wrapper" >
                 @RenderBody()
 
             </div>

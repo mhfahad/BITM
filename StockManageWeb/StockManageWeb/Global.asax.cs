@@ -25,6 +25,18 @@ namespace StockManageWeb
                 conf.CreateMap<CategoryVM, Category>();
                 conf.CreateMap<Category, CategoryVM>();
 
+                conf.CreateMap<CustomerVM, Customer>();
+                conf.CreateMap<Customer, CustomerVM>();
+
+                conf.CreateMap<ProductVM, Product>();
+                conf.CreateMap<Product, ProductVM>();
+
+                conf.CreateMap<PurchaseVM, Purchase>();
+                conf.CreateMap<Purchase, PurchaseVM>();
+
+                conf.CreateMap<SupplierVM, Supplier>();
+                conf.CreateMap<Supplier, SupplierVM>();
+
                 conf.CreateMap<SalesVm, Sale>();
                 conf.CreateMap<Sale, SalesVm>();
             });

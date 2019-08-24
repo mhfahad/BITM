@@ -1,5 +1,5 @@
 ﻿
-@model StockManage.Models.Models.Customer
+@model StockManageWeb.Models.CustomerVM
 @{
     ViewBag.Title = "Edit";
 }
@@ -28,7 +28,7 @@
 
                 <tr>
                     <td><h4 class="text-primary">Customer Address</h4></td>
-                    <td><input class="text-primary" type="text" name="Address" value="@Model.Address"/></td>
+                    <td><input class="text-primary" type="text" name="Address" value="@Model.Address" /></td>
 
                 </tr>
 
@@ -40,7 +40,7 @@
 
                 <tr>
                     <td><h4 class="text-primary">Customer Contact</h4></td>
-                    <td><input class="text-primary" type="text" name="Contact" value="@Model.Contact"/></td>
+                    <td><input class="text-primary" type="text" name="Contact" value="@Model.Contact" /></td>
 
                 </tr>
 

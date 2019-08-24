@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace StockManage.BLL.BLL
 {
@@ -12,18 +13,18 @@ namespace StockManage.BLL.BLL
     {
         Product product = new Product();
         StockManageRepositoryProduct _Repository = new StockManageRepositoryProduct();
-        public void Add(Product product)
+        public void Add(Product product, HttpPostedFileBase image)
         {
-            _Repository.add(product);
+            _Repository.add(product,image);
         }
         public List<Product> Show()
         {
             return _Repository.Show();
         }
 
-        public void Edit(Product product)
+        public void Edit(Product product, HttpPostedFileBase image)
         {
-            _Repository.Edit(product);
+            _Repository.Edit(product,image);
         }
 
         public void Delete(Product product)
@@ -34,6 +35,10 @@ namespace StockManage.BLL.BLL
         public Product GetByID(Product product)
         {
             return _Repository.GetByID(product);
+        }
+        public List<Product> Search(Product product)
+        {
+            return _Repository.search(product);
         }
     }
 }

@@ -25,9 +25,9 @@ namespace StockManageWeb.repository.Repository
         {
             return Db.customers.ToList();
         }
-        public List<Product> ShowProduct()
+        public List<Purchase> ShowProduct()
         {
-            return Db.products.ToList();
+            return Db.purchases.ToList();
         }
         public int GetByID(int cutomerID)
         {
@@ -36,9 +36,16 @@ namespace StockManageWeb.repository.Repository
             return customers;
         }
 
+        public int GetbyIDReorder(int productID)
+        {
+            var customers = Db.purchases.Where(c => c.ID == productID).Select(c => c.product.ReorderLevel).SingleOrDefault();
+
+            return customers;
+        }
+
         public int GetByID2(int productID)
         {
-            var customers = Db.products.Where(c => c.ID == productID).Select(c => c.ReorderLevel).SingleOrDefault();
+            var customers = Db.purchases.Where(c => c.ID == productID).Select(c => c.quantity).SingleOrDefault();
 
             return customers;
         }

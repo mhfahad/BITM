@@ -2,9 +2,11 @@
 using StockManage.Models.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace StockManageWeb.repository.Repository
 {
@@ -12,8 +14,14 @@ namespace StockManageWeb.repository.Repository
     {
         StockManageDbContext Db = new StockManageDbContext();
 
-        public int add(Customer customer)
+        public int add(Customer customer, HttpPostedFileBase image)
         {
+            
+            using (BinaryReader br = new BinaryReader(image.InputStream))
+            {
+
+                customer.Data = br.ReadBytes(image.ContentLength);
+            }
             Db.customers.Add(customer);
             int saved = Db.SaveChanges();
             return 0;
@@ -51,6 +59,11 @@ namespace StockManageWeb.repository.Repository
         {
             Customer aCustomer = Db.customers.FirstOrDefault(c => c.ID == customer.ID);
             return aCustomer;
+        }
+
+        public List<Customer> search(Customer customer)
+        {
+            return Db.customers.Where(c => c.Name.ToLower().Contains(customer.Name.ToLower())).ToList();
         }
     }
 }

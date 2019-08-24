@@ -35,5 +35,6 @@ namespace StockManage.BLL.BLL
         {
             return _Repository.GetByID(category);
         }
+        
     }
 }

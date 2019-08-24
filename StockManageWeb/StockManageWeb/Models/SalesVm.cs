@@ -20,15 +20,15 @@ namespace StockManageWeb.Models
         public DateTime date { get; set; }
 
         [Display(Name = "Product")]
-        public int ProductID { get; set; }
-        public Product Products { get; set; }
-
+        public int PurchaseID { get; set; }
+        public virtual Purchase Purchase { get; set; }
+        public int grandTotal { get; set; }
         public int quantity { get; set; }
         public int MRP { get; set; }
         public int TotalMRP { get; set; }
 
         public List<Sale> sales { get; set; }
-
+        public List<Purchase> Purchaselist { get; set; }
         public IEnumerable<SelectListItem> CustomerList { get; set; }
         public IEnumerable<SelectListItem> ProductList { get; set; }
     }

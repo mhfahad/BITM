@@ -37,7 +37,7 @@ namespace StockManageWeb.repository.Repository
 
         public int Delete(Category category)
         {
-            Category aCategory = Db.categories.FirstOrDefault(x => x.ID == category.ID);
+            Category aCategory = Db.categories.Single(x => x.ID == category.ID);
             Db.categories.Remove(aCategory);
             Db.SaveChanges();
             return 0;
@@ -48,6 +48,8 @@ namespace StockManageWeb.repository.Repository
             Category aCategory = Db.categories.FirstOrDefault(c => c.ID == category.ID);
             return aCategory;
         }
+
+        
 
     }
 }

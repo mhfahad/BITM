@@ -14,14 +14,12 @@ namespace StockManage.Models.Models
 
         [Required(ErrorMessage ="Not null")]
         [StringLength(50,MinimumLength =3)]
-        
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Not null")]
         [StringLength(50, MinimumLength = 3)]
         public string Code { get; set; }
 
-        //[NotMapped]
-        //public List<Category> categories { get; set; }
+       
     }
 }

@@ -1,5 +1,7 @@
-﻿using StockManage.BLL.BLL;
+﻿using AutoMapper;
+using StockManage.BLL.BLL;
 using StockManage.Models.Models;
+using StockManageWeb.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,120 +14,157 @@ namespace StockManageWeb.Controllers
     {
         // GET: Product
         StockManageProductManager _stockManageManger = new StockManageProductManager();
+        
         StockManageManager _stockManageManagerCategory = new StockManageManager();
         Product _product = new Product();
-        // GET: Category
-        public ActionResult Index()
-        {
-            return View();
-        }
+       // ProductVM _productvm = new ProductVM();
+       
 
         public ActionResult Add()
         {
-            _product.products = _stockManageManger.Show();
-            _product.categories = _stockManageManagerCategory.Show();
-            return View(_product);
+            ProductVM _productvm = new ProductVM();
+            _productvm.CategoryList = _stockManageManagerCategory.Show()
+               .Select(c => new SelectListItem()
+               {
+                   Value = c.ID.ToString(),
+                   Text = c.Name
+               }).ToList();
+
+
+
+            _productvm.products = _stockManageManger.Show();
+           
+            return View(_productvm);
         }
-
+        [Route("Add")]
         [HttpPost]
-        public ActionResult Add(Product product)
+        public ActionResult Add(ProductVM model)
         {
-            if (ModelState.IsValid)
-
+            Product product = Mapper.Map<Product>(model);
+            HttpPostedFileBase image = Request.Files["ImageData"];
+            var name = _stockManageManger.Show();
+            bool isvalid = true;
+            foreach (var item in name)
             {
-                if (product.Name != null)
+                if (model.Name == item.Name)
                 {
-                    _stockManageManger.Add(product);
-                    ViewBag.message = "Inserted";
+                    isvalid = false;
                 }
+                
             }
 
+
+            if (isvalid != false)
+            {
+                _stockManageManger.Add(product, image);
+                ViewBag.message = "Inserted";
+            }
             else
             {
-                ViewBag.message = "Not Inserted";
+                ViewBag.message = "Already Have";
             }
 
-            _product.products = _stockManageManger.Show();
-            _product.categories = _stockManageManagerCategory.Show();
-            return View(_product);
+
+
+
+            model.products = _stockManageManger.Show();
+
+            
+
+            return RedirectToAction("add");
         }
 
         [HttpPost]
-        public ActionResult Show(Product product)
+        public ActionResult Show(ProductVM model)
         {
-            _product.products = _stockManageManger.Show();
-          
+            Product product = Mapper.Map<Product>(model);
+           
+
             if (product.Name != null)
             {
-                 _product.products = _product.products.Where(c => c.Name.ToLower().Contains(product.Name.ToLower())).ToList();
+                model.products = _stockManageManger.Search(product);
 
             }
-            return View(_product);
+            return View(model);
         }
 
         public ActionResult Show()
         {
+            ProductVM _productvm = new ProductVM();
+            _productvm.products = _stockManageManger.Show();
 
-            _product.products = _stockManageManger.Show();
-
-            return View(_product);
+            return View(_productvm);
         }
 
         public ActionResult Edit(int? id)
         {
-            _product.ID = Convert.ToInt32(id);
+            ProductVM model = new ProductVM();
+            model.ID = Convert.ToInt32(id);
+            Product product = Mapper.Map<Product>(model);
 
-            _product.products = _stockManageManger.Show();
-            var product = _stockManageManger.GetByID(_product);
-            if(id==null)
-            {
-                _product.categories = _stockManageManagerCategory.Show();
-                return View(_product);
-            }
-           
-            ViewBag.message = "Edited";
-            return View(product);
+            var GetByID = _stockManageManger.GetByID(product);
+
+            model.Name = GetByID.Name;
+            model.Code = GetByID.Code;
+            model.Discription = GetByID.Discription;
+            model.ReorderLevel = GetByID.ReorderLevel;
+            model.Data = GetByID.Data;
+
+            model.CategoryList = _stockManageManagerCategory.Show()
+               .Select(c => new SelectListItem()
+               {
+                   Value = c.ID.ToString(),
+                   Text = c.Name
+               }).ToList();
+
+
+            return View(model);
         }
 
         [HttpPost]
-        public ActionResult Edit(Product product)
+        public ActionResult Edit(ProductVM model)
         {
 
+            Product aProduct = Mapper.Map<Product>(model);
+            HttpPostedFileBase image = Request.Files["ImageData"];
+            _stockManageManger.Edit(aProduct,image);
+            ViewBag.message = "Edited";
+            model.products = _stockManageManger.Show();
 
-            _product.Name = product.Name;
-            _product.ID = product.ID;
-            _product.Code = product.Code;
-            _product.Category = product.Category;
-            _product.ReorderLevel = product.ReorderLevel;
-            _product.Discription = product.Discription;
-            _stockManageManger.Edit(_product);
-
-           
-            _product.products= _stockManageManger.Show();
-
-            return View(_product);
+            return RedirectToAction("Add");
         }
 
 
         public ActionResult Delete(int? id)
         {
-            _product.ID = Convert.ToInt32(id);
+            ProductVM model = new ProductVM();
+            Product aProduct = Mapper.Map<Product>(model);
+            aProduct.ID = Convert.ToInt32(id);
             if (id != null)
             {
-                var product = _stockManageManger.GetByID(_product);
+                var product = _stockManageManger.GetByID(aProduct);
                 _stockManageManger.Delete(product);
             }
 
 
 
 
-            _product.products= _stockManageManger.Show();
-            return View(_product);
+            model.products = _stockManageManger.Show();
+            return RedirectToAction("Add");
 
         }
 
-
-
+        //[HttpPost]
+        //public JsonResult GetbyID2( int ID)
+        //{
+        //    ProductVM model = new ProductVM();
+        //    Product aProduct = Mapper.Map<Product>(model);
+        //    aProduct.ID = Convert.ToInt32(ID); ;
+        //    var Product = _stockManageManger.GetByID(aProduct);
+            
+        //    model.Data = Product.Data;
+        //    return Json(model, JsonRequestBehavior.AllowGet);
+        //}
 
     }
 }

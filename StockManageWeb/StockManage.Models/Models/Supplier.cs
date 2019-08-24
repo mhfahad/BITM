@@ -34,11 +34,8 @@ namespace StockManage.Models.Models
         [Required(ErrorMessage = "Not null")]
         [StringLength(50, MinimumLength = 5)]
         public string ContactPerson { get; set; }
-
         [Required]
-        public byte[] Image { get; set; }
-
-        [NotMapped]
-        public List<Supplier> suppliers { get; set; }
+        public byte[] Data { get; set; }
     }
+       
 }

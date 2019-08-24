@@ -6,25 +6,24 @@ using System.Linq;
 using System.Web;
 using System.IO;
 using System.Web.Mvc;
+using StockManageWeb.Models;
+using AutoMapper;
 
 namespace StockManageWeb.Controllers
 {
     public class CustomerController : Controller
     {
        StockManageCustomerManager _stockManageManger = new StockManageCustomerManager();
-        Customer _customer= new Customer();
-        // GET: Category
-        public ActionResult Index()
-        {
-            return View();
-        }
+        Customer _customer = new Customer();
+        CustomerVM _customervm = new CustomerVM();
+        
 
         public ActionResult Add()
         {
+           
+            _customervm.customers = _stockManageManger.Show();
 
-            _customer.customers= _stockManageManger.Show();
-
-            return View(_customer);
+            return View(_customervm);
         }
 
 
@@ -42,84 +41,100 @@ namespace StockManageWeb.Controllers
         //    return View();
         //}
 
-
+        [Route("Add")]
         [HttpPost]
-        public ActionResult Add(Customer customer)
+        public ActionResult Add(CustomerVM model)
         {
-            _stockManageManger.Add(customer);
+            if (ModelState.IsValid)
+            {
+                Customer customer = Mapper.Map<Customer>(model);
 
-            _customer.customers = _stockManageManger.Show();
-            return View(_customer);
+                HttpPostedFileBase image = Request.Files["ImageData"];
+
+                _stockManageManger.Add(customer, image);
+                
+            }
+            _customervm.customers = _stockManageManger.Show();
+            return View(_customervm);
         }
             
     
 
         [HttpPost]
-        public ActionResult Show(Customer customer)
+        public ActionResult Show(CustomerVM model)
         {
-            _customer.customers = _stockManageManger.Show();
+            Customer customer = Mapper.Map<Customer>(model);
             if (customer.Name != null)
             {
-                _customer.customers= _customer.customers.Where(c => c.Name.ToLower().Contains(customer.Name.ToLower())).ToList();
+                _customervm.customers = _stockManageManger.search(customer);
+               
             }
 
 
-            return View(_customer);
+            return View(_customervm);
         }
 
         public ActionResult Show()
         {
 
-            _customer.customers= _stockManageManger.Show();
+            _customervm.customers = _stockManageManger.Show();
 
-            return View(_customer);
+            return View(_customervm);
         }
 
         public ActionResult Edit(int? id)
         {
-            _customer.ID = Convert.ToInt32(id);
+            CustomerVM model = new CustomerVM();
+            model.ID = Convert.ToInt32(id);
+            Customer customer = Mapper.Map<Customer>(model);
+           
+            var GetByID = _stockManageManger.GetByID(customer);
+            //_customer.customers = _stockManageManger.Show();
+            model.Name = GetByID.Name;
+            model.Address = GetByID.Address;
+            model.Code = GetByID.Code;
+            model.Contact = GetByID.Contact;
+            model.Email = GetByID.Email;
+            model.Loyalty = GetByID.Loyalty;
+            
 
-            _customer.customers= _stockManageManger.Show();
-            var customer = _stockManageManger.GetByID(_customer);
-            ViewBag.message = "Inserted";
-            return View(customer);
+            
+            return View(model);
         }
 
         [HttpPost]
-        public ActionResult Edit(Customer customer)
+        public ActionResult Edit(CustomerVM model)
         {
 
+            Customer customer = Mapper.Map<Customer>(model);
 
-            _customer.Name = customer.Name;
-            _customer.ID = customer.ID;
-            _customer.Code = customer.Code;
-            _customer.Address = customer.Address;
-            _customer.Email = customer.Email;
-            _customer.Contact = customer.Contact;
-            _customer.Loyalty = customer.Loyalty;
-            _stockManageManger.Edit(_customer);
+            
 
+            _stockManageManger.Edit(customer);
 
-            _customer.customers = _stockManageManger.Show();
-
-            return View(_customer);
+            model.customers = _stockManageManger.Show();
+            ViewBag.message = "Updated";
+            return View(model);
         }
 
 
         public ActionResult Delete(int? id)
         {
-            _customer.ID = Convert.ToInt32(id);
+            CustomerVM model = new CustomerVM();
+            model.ID= Convert.ToInt32(id);
+            Customer customer = Mapper.Map<Customer>(model);
+           
             if (id != null)
             {
-                var customer = _stockManageManger.GetByID(_customer);
-                _stockManageManger.Delete(customer);
+                var aCustomer = _stockManageManger.GetByID(customer);
+                _stockManageManger.Delete(aCustomer);
             }
 
 
 
 
-            _customer.customers= _stockManageManger.Show();
-            return View(_customer);
+            _customervm.customers= _stockManageManger.Show();
+            return View(_customervm);
 
         }
 

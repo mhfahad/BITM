@@ -51,65 +51,85 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseContext\StockManageDbContext.cs" />
-    <Compile Include="Migrations\201907271731437_InitialCreate.cs" />
-    <Compile Include="Migrations\201907271731437_InitialCreate.Designer.cs">
-      <DependentUpon>201907271731437_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201908211217234_Product22.cs" />
+    <Compile Include="Migrations\201908211217234_Product22.Designer.cs">
+      <DependentUpon>201908211217234_Product22.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907281832081_first001.cs" />
-    <Compile Include="Migrations\201907281832081_first001.Designer.cs">
-      <DependentUpon>201907281832081_first001.cs</DependentUpon>
+    <Compile Include="Migrations\201908211441560_Product23.cs" />
+    <Compile Include="Migrations\201908211441560_Product23.Designer.cs">
+      <DependentUpon>201908211441560_Product23.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907281847337_first004.cs" />
-    <Compile Include="Migrations\201907281847337_first004.Designer.cs">
-      <DependentUpon>201907281847337_first004.cs</DependentUpon>
+    <Compile Include="Migrations\201908211527156_Perchase.cs" />
+    <Compile Include="Migrations\201908211527156_Perchase.Designer.cs">
+      <DependentUpon>201908211527156_Perchase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907281917356_first006.cs" />
-    <Compile Include="Migrations\201907281917356_first006.Designer.cs">
-      <DependentUpon>201907281917356_first006.cs</DependentUpon>
+    <Compile Include="Migrations\201908211531252_Perchase1.cs" />
+    <Compile Include="Migrations\201908211531252_Perchase1.Designer.cs">
+      <DependentUpon>201908211531252_Perchase1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907291510470_PRoduct.cs" />
-    <Compile Include="Migrations\201907291510470_PRoduct.Designer.cs">
-      <DependentUpon>201907291510470_PRoduct.cs</DependentUpon>
+    <Compile Include="Migrations\201908211555484_Perchase12.cs" />
+    <Compile Include="Migrations\201908211555484_Perchase12.Designer.cs">
+      <DependentUpon>201908211555484_Perchase12.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907291540416_PRoduct1.cs" />
-    <Compile Include="Migrations\201907291540416_PRoduct1.Designer.cs">
-      <DependentUpon>201907291540416_PRoduct1.cs</DependentUpon>
+    <Compile Include="Migrations\201908211605343_Perchase13.cs" />
+    <Compile Include="Migrations\201908211605343_Perchase13.Designer.cs">
+      <DependentUpon>201908211605343_Perchase13.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907291919263_Customer.cs" />
-    <Compile Include="Migrations\201907291919263_Customer.Designer.cs">
-      <DependentUpon>201907291919263_Customer.cs</DependentUpon>
+    <Compile Include="Migrations\201908211617380_Perchase14.cs" />
+    <Compile Include="Migrations\201908211617380_Perchase14.Designer.cs">
+      <DependentUpon>201908211617380_Perchase14.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907300019213_Supplies.cs" />
-    <Compile Include="Migrations\201907300019213_Supplies.Designer.cs">
-      <DependentUpon>201907300019213_Supplies.cs</DependentUpon>
+    <Compile Include="Migrations\201908211921332_Perchase15.cs" />
+    <Compile Include="Migrations\201908211921332_Perchase15.Designer.cs">
+      <DependentUpon>201908211921332_Perchase15.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907311452068_image.cs" />
-    <Compile Include="Migrations\201907311452068_image.Designer.cs">
-      <DependentUpon>201907311452068_image.cs</DependentUpon>
+    <Compile Include="Migrations\201908211929276_Perchase16.cs" />
+    <Compile Include="Migrations\201908211929276_Perchase16.Designer.cs">
+      <DependentUpon>201908211929276_Perchase16.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907311454263_images.cs" />
-    <Compile Include="Migrations\201907311454263_images.Designer.cs">
-      <DependentUpon>201907311454263_images.cs</DependentUpon>
+    <Compile Include="Migrations\201908212122294_Perchase17.cs" />
+    <Compile Include="Migrations\201908212122294_Perchase17.Designer.cs">
+      <DependentUpon>201908212122294_Perchase17.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908051910564_asssssssssss.cs" />
-    <Compile Include="Migrations\201908051910564_asssssssssss.Designer.cs">
-      <DependentUpon>201908051910564_asssssssssss.cs</DependentUpon>
+    <Compile Include="Migrations\201908212128433_Perchase18.cs" />
+    <Compile Include="Migrations\201908212128433_Perchase18.Designer.cs">
+      <DependentUpon>201908212128433_Perchase18.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908071631439_sales.cs" />
-    <Compile Include="Migrations\201908071631439_sales.Designer.cs">
-      <DependentUpon>201908071631439_sales.cs</DependentUpon>
+    <Compile Include="Migrations\201908212131447_Perchase19.cs" />
+    <Compile Include="Migrations\201908212131447_Perchase19.Designer.cs">
+      <DependentUpon>201908212131447_Perchase19.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908071707005_sale.cs" />
-    <Compile Include="Migrations\201908071707005_sale.Designer.cs">
-      <DependentUpon>201908071707005_sale.cs</DependentUpon>
+    <Compile Include="Migrations\201908212219085_Perchase20.cs" />
+    <Compile Include="Migrations\201908212219085_Perchase20.Designer.cs">
+      <DependentUpon>201908212219085_Perchase20.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908071714006_sal.cs" />
-    <Compile Include="Migrations\201908071714006_sal.Designer.cs">
-      <DependentUpon>201908071714006_sal.cs</DependentUpon>
+    <Compile Include="Migrations\201908212224595_Perchase21.cs" />
+    <Compile Include="Migrations\201908212224595_Perchase21.Designer.cs">
+      <DependentUpon>201908212224595_Perchase21.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908080349463_aaaaaaaaaaaaaaaaaaa.cs" />
-    <Compile Include="Migrations\201908080349463_aaaaaaaaaaaaaaaaaaa.Designer.cs">
-      <DependentUpon>201908080349463_aaaaaaaaaaaaaaaaaaa.cs</DependentUpon>
+    <Compile Include="Migrations\201908212229212_Perchase22.cs" />
+    <Compile Include="Migrations\201908212229212_Perchase22.Designer.cs">
+      <DependentUpon>201908212229212_Perchase22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908212340038_Perchase23.cs" />
+    <Compile Include="Migrations\201908212340038_Perchase23.Designer.cs">
+      <DependentUpon>201908212340038_Perchase23.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908220343169_class.cs" />
+    <Compile Include="Migrations\201908220343169_class.Designer.cs">
+      <DependentUpon>201908220343169_class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908230532423_Image.cs" />
+    <Compile Include="Migrations\201908230532423_Image.Designer.cs">
+      <DependentUpon>201908230532423_Image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908230703113_image2.cs" />
+    <Compile Include="Migrations\201908230703113_image2.Designer.cs">
+      <DependentUpon>201908230703113_image2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908230722281_image3.cs" />
+    <Compile Include="Migrations\201908230722281_image3.Designer.cs">
+      <DependentUpon>201908230722281_image3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,50 +145,65 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907271731437_InitialCreate.resx">
-      <DependentUpon>201907271731437_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908211217234_Product22.resx">
+      <DependentUpon>201908211217234_Product22.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907281832081_first001.resx">
-      <DependentUpon>201907281832081_first001.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908211441560_Product23.resx">
+      <DependentUpon>201908211441560_Product23.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907281847337_first004.resx">
-      <DependentUpon>201907281847337_first004.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908211527156_Perchase.resx">
+      <DependentUpon>201908211527156_Perchase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907281917356_first006.resx">
-      <DependentUpon>201907281917356_first006.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908211531252_Perchase1.resx">
+      <DependentUpon>201908211531252_Perchase1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907291510470_PRoduct.resx">
-      <DependentUpon>201907291510470_PRoduct.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908211555484_Perchase12.resx">
+      <DependentUpon>201908211555484_Perchase12.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907291540416_PRoduct1.resx">
-      <DependentUpon>201907291540416_PRoduct1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908211605343_Perchase13.resx">
+      <DependentUpon>201908211605343_Perchase13.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907291919263_Customer.resx">
-      <DependentUpon>201907291919263_Customer.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908211617380_Perchase14.resx">
+      <DependentUpon>201908211617380_Perchase14.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907300019213_Supplies.resx">
-      <DependentUpon>201907300019213_Supplies.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908211921332_Perchase15.resx">
+      <DependentUpon>201908211921332_Perchase15.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907311452068_image.resx">
-      <DependentUpon>201907311452068_image.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908211929276_Perchase16.resx">
+      <DependentUpon>201908211929276_Perchase16.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907311454263_images.resx">
-      <DependentUpon>201907311454263_images.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908212122294_Perchase17.resx">
+      <DependentUpon>201908212122294_Perchase17.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908051910564_asssssssssss.resx">
-      <DependentUpon>201908051910564_asssssssssss.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908212128433_Perchase18.resx">
+      <DependentUpon>201908212128433_Perchase18.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908071631439_sales.resx">
-      <DependentUpon>201908071631439_sales.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908212131447_Perchase19.resx">
+      <DependentUpon>201908212131447_Perchase19.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908071707005_sale.resx">
-      <DependentUpon>201908071707005_sale.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908212219085_Perchase20.resx">
+      <DependentUpon>201908212219085_Perchase20.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908071714006_sal.resx">
-      <DependentUpon>201908071714006_sal.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908212224595_Perchase21.resx">
+      <DependentUpon>201908212224595_Perchase21.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908080349463_aaaaaaaaaaaaaaaaaaa.resx">
-      <DependentUpon>201908080349463_aaaaaaaaaaaaaaaaaaa.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908212229212_Perchase22.resx">
+      <DependentUpon>201908212229212_Perchase22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908212340038_Perchase23.resx">
+      <DependentUpon>201908212340038_Perchase23.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908220343169_class.resx">
+      <DependentUpon>201908220343169_class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908230532423_Image.resx">
+      <DependentUpon>201908230532423_Image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908230703113_image2.resx">
+      <DependentUpon>201908230703113_image2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908230722281_image3.resx">
+      <DependentUpon>201908230722281_image3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

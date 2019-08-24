@@ -2,9 +2,11 @@
 using StockManage.Models.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace StockManageWeb.repository.Repository
 {
@@ -13,8 +15,15 @@ namespace StockManageWeb.repository.Repository
 
         StockManageDbContext Db = new StockManageDbContext();
 
-        public int add(Supplier supplier)
+        public int add(Supplier supplier, HttpPostedFileBase image)
+        
         {
+            using (BinaryReader br = new BinaryReader(image.InputStream))
+            {
+
+                supplier.Data = br.ReadBytes(image.ContentLength);
+            }
+
             Db.suppliers.Add(supplier);
             int saved = Db.SaveChanges();
             return 0;

@@ -15,6 +15,7 @@ namespace StockManage.DatabaseContext.DatabaseContext
         public DbSet<Product> products { get; set; }
         public DbSet<Supplier> suppliers { get; set; }
         public DbSet<Sale> sales { get; set; }
+        public DbSet<Purchase> purchases { get; set; }
 
     }
 }

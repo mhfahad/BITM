@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace StockManage.Models.Models
         [StringLength(150, MinimumLength = 5)]
         public string Address { get; set; }
 
-        [Required]
+        [EmailAddress]
         public string Email { get; set; }
 
         [Required]
@@ -32,9 +33,11 @@ namespace StockManage.Models.Models
 
         [Required]
         public int Loyalty { get; set; }
+        [Required]
+        public byte[] Data { get; set; }
 
 
-        [NotMapped]
-        public List<Customer> customers { get; set; }
+
+
     }
 }

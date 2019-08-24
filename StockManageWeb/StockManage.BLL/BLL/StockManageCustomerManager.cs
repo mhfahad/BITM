@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace StockManage.BLL.BLL
 {
@@ -12,9 +13,9 @@ namespace StockManage.BLL.BLL
     {
         Customer customer= new Customer();
         StockManageCustomerRipository _Repository = new StockManageCustomerRipository();
-        public void Add(Customer customer)
+        public void Add(Customer customer, HttpPostedFileBase image)
         {
-            _Repository.add(customer);
+            _Repository.add(customer, image);
         }
         public List<Customer> Show()
         {
@@ -35,5 +36,11 @@ namespace StockManage.BLL.BLL
         {
             return _Repository.GetByID(customer);
         }
+
+        public List<Customer> search(Customer customer)
+        {
+            return _Repository.search(customer);
+        }
+
     }
 }
